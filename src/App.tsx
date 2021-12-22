@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Button from './components/Button';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+type myProps = {}
+
+type myState = {
+  count: number
+}
+
+class App extends Component<myProps, myState> {
+  constructor(props: myProps) {
+    super(props);
+    this.state = { count: 0 };
+    this.add = this.add.bind(this)
+    this.less = this.less.bind(this)
+  };
+  add = () => this.setState({ count: this.state.count + 1,});
+  less= () => this.setState({ count: this.state.count - 1 });
+  render() {
+    return (
+      <>
+        <h1>Hello World!</h1>
+        <p>{this.state.count}</p>
+        <hr />
+        <Button class='test-class' id='test-id' value='Add' onClick={this.add}/>
+        <hr />
+        <Button class='test-class' id='test-id' value='Less' onClick={this.less}/>
+        <hr />
+      </>
+    )
+  }
 }
 
 export default App;
