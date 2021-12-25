@@ -15,13 +15,13 @@ class App extends React.Component<myProps, myState> {
   less= () => this.setState({ count: this.state.count - 1 });
   render() {
     return (
-      <div className='container mx-auto mt-12'>
-        <h1>Hello World!</h1>
-        <p>{this.state.count}</p>
+      <div className="flex flex-col bg-slate-900 justify-center items-center min-w-full min-h-screen mx-auto">
+        <h1 className="text-3xl text-red-200">Hello World!</h1>
+        <p className="text-xl text-red-200">{this.state.count}</p>
         <hr />
-        <Button class='test-class' id='test-id' value='Add' onClick={this.add}/>
+        <Button class='test-class text-red-200' id='test-id' value='Add' onClick={this.add}/>
         <hr />
-        <Button class='test-class' id='test-id' value='Less' onClick={this.less}/>
+        <Button class='test-class text-red-200' id='test-id' value='Less' onClick={this.less}/>
         <hr />
       </div>
     )
