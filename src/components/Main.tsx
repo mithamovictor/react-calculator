@@ -1,13 +1,21 @@
 import React from 'react';
 import Button from './Button';
 import { add } from '../modules/Calculate';
-import { render } from '@testing-library/react';
 
-class Main extends React.Component<myprops>{
-  constructor(props) {
+type myProps = {}
+type myState = {
+  output: number,
+  val1: number,
+  val2: number
+}
+
+class Main extends React.Component<myProps, myState>{
+  constructor(props: myProps) {
     super(props)
     this.state = {
-      output: 0
+      output: 0,
+      val1: 0,
+      val2: 0
     }
   }
   addNums = (num1:number, num2:number) => {
