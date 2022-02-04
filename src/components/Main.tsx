@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from './Button';
-import { add } from '../modules/Calculate';
+import Calculate from './Calculate';
 
 type myProps = {}
 type myState = {
@@ -19,7 +19,8 @@ class Main extends React.Component<myProps, myState>{
     }
   }
   addNums = (num1:number, num2:number) => {
-    return add(num1, num2);
+    const calc = new Calculate();
+    return calc.add(num1, num2);
   }
   render() {
     const { output } = this.state;
